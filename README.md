@@ -36,10 +36,10 @@ protected void Window3Button_Click(object sender, RoutedEventArgs e)
 
 
 Cały projekt składa się z rozpisanych kolejno i wykonanych miniaplikacji:
-•	Templatka rachunku dla klienta (1)
-•	Prosta animacja „Akcelerator” (2)
-•	„Tic Tac Toe”(3)
-•	Chat P2P(4)
+	Templatka rachunku dla klienta (1)
+	Prosta animacja „Akcelerator” (2)
+	„Tic Tac Toe”(3)
+	Chat P2P(4)
 Dodatkowo w oknie About znajdują się informacje o autorach oraz link do github 
 
 2.1 MainWindow.xaml
