@@ -1,0 +1,136 @@
+﻿<Window x:Class="WPF_Project_WSEI.Acceleration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Project_WSEI"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        MinHeight="600" MinWidth="800" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" 
+        WindowState="Normal"
+        ResizeMode="CanResize">
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="0"
+            ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
+    
+    <Grid Background="DarkGray">
+        <!--#region Window Border-->
+        <Grid x:Name="BorderWindow"
+              Visibility="Visible">
+            <Grid VerticalAlignment="Top"
+                  Background="#FF9C27B0"
+                  Height="60"
+                  MouseDown="Grid_MouseDown">
+                <TextBlock Text="Acceleration"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="22" />
+                <!-- This part contains  three buttons that are placed in the right top corner-->
+                <Grid x:Name="ButtonBox"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="MaximizeButton"
+                            Grid.Column="0"
+                            Click="Window3Button_Click"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Kind="WindowMaximize"/>
+                    </Button>
+                    <Button x:Name="MinimizeButton"
+                            Grid.Column="1"
+                            Click="Window3Button_Click"
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}" >
+                        <materialDesign:PackIcon Kind="WindowMinimize"/>
+                    </Button>
+                    <Button x:Name="TurnOffButton"
+                            Grid.Column="2"
+                            Click="Window3Button_Click"
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}" >
+                        <materialDesign:PackIcon Kind="WindowClose"/>
+                    </Button>
+                </Grid>
+            </Grid>
+            
+        </Grid>
+        <!--#endregion-->
+        
+        <!--#region Accelerator-->
+        
+        
+        <Grid>
+            <Slider Minimum="0" 
+                    Maximum="170" 
+                    Width="300" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top" 
+                    Margin="200 120 200 0" 
+                    Value="{Binding Path=Value}"/>
+            <Border HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom" 
+                    Height="300" Width="600" 
+                    BorderBrush="#FF9F18B6"
+                    BorderThickness="2 2 2 0" 
+                    CornerRadius="300 300 0 0" 
+                    Background="#FF151515"/>
+            <Border HorizontalAlignment="Center" 
+                    VerticalAlignment="Bottom" 
+                    Height="290" Width="580"
+                    BorderBrush="#FF9F18B6"
+                    BorderThickness="0 2 0 0" 
+                    CornerRadius="300 300 0 0">
+                <Border.Effect>
+                    <DropShadowEffect Color="#FF9F18B6" BlurRadius="12" ShadowDepth="4"/>
+                </Border.Effect>
+            </Border>
+            <TextBlock HorizontalAlignment="Center" 
+                       VerticalAlignment="Bottom"
+                       Margin="100" 
+                       FontSize="80" 
+                       FontFamily="Agency FB" 
+                       Foreground="#FF9F18B6" 
+                       Text="{Binding Path=Value, Mode=TwoWay}">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="20" Color="#FF9F18B6" ShadowDepth="0"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <Border Width="5" 
+                    CornerRadius="120 120 0 0"
+                    Background="#FF9F18B6" 
+                    RenderTransformOrigin="0.5 2" 
+                    Height="140" Margin="0 0 0 140" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Center">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="{Binding Path=Angle}"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="30" Color="#FFB9B9B9" ShadowDepth="0"/>
+                </Border.Effect>
+            </Border>
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</Window>
