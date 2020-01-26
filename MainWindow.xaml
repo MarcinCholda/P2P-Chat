@@ -28,7 +28,7 @@
                   Background="#FF9C27B0"
                   Height="60"
                   MouseDown="Grid_MouseDown">
-                <TextBlock Text="AppName"
+                <TextBlock Text="WPF_APP_WSEI"
                            Foreground="White"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
