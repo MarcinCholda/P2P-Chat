@@ -121,8 +121,6 @@
 
                     <TextBlock Text="Player 2" Foreground="White" FontSize="22" Margin="30 30 30 0"/>
                     <TextBox x:Name="Player2Score" IsReadOnly="True" Padding="10"/>
-
-                    <Button x:Name="ResetScore" Content="Reset Score" Margin="30"/>
                     <Button x:Name="ResetGame" Content="Reset Game" Margin="30"/>
                 </StackPanel>
                 <Grid x:Name="TicTacToeBox" Background="Gray" Grid.Column="1">
